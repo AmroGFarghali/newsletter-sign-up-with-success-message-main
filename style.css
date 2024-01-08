@@ -1,0 +1,226 @@
+:root {
+  --clr-tomato: hsl(4, 100%, 67%);
+  --clr-dark-slate-grey: hsl(234, 29%, 20%);
+  --clr-charcoal-grey: hsl(235, 18%, 26%);
+  --clr-grey: hsl(231, 7%, 60%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  --ff-regular: "Roboto", sans-serif;
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  color: var(--clr-dark-slate-grey);
+  font-family: var(--ff-regular);
+  font-weight: var(--fw-regular);
+}
+
+.form-container {
+  background-color: var(--clr-white);
+  display: flex;
+  flex-direction: column;
+  max-width: 23.5rem;
+}
+
+.form-content {
+  display: grid;
+  padding: 1.5rem;
+  gap: 1.1rem;
+}
+.form-title {
+  font-weight: var(--fw-bold);
+  font-size: 2.5rem;
+}
+
+.form-checks {
+  display: grid;
+  gap: 1rem;
+}
+.checks {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+.checks p {
+  padding-right: 1rem;
+  line-height: 1.4rem;
+}
+.form-img {
+  align-self: flex-start;
+  padding-top: 0.2rem;
+}
+
+.input-email {
+  margin-top: 2rem;
+  display: grid;
+  gap: 0.4rem;
+}
+.input-email > .label-area {
+  font-size: 0.755rem;
+  color: var(--clr-dark-slate-grey);
+  font-weight: var(--fw-bold);
+  display: flex;
+  justify-content: space-between;
+}
+.error-message {
+  /* display: none; */
+  color: var(--clr-tomato);
+}
+.input-email > input {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-style: solid;
+}
+
+.input-email > .submit {
+  margin-top: 1rem;
+  background-color: var(--clr-dark-slate-grey);
+  color: var(--clr-white);
+  font-weight: var(--fw-bold);
+}
+
+.input-email > .submit:hover {
+  background-color: var(--clr-tomato);
+}
+/* successs msg styling */
+.success-msg-container {
+  display: none;
+}
+.success-msg {
+  background-color: var(--clr-white);
+  padding: 1.5rem;
+  display: grid;
+  place-content: center;
+}
+
+.success-msg h2 {
+  font-size: 2.5rem;
+  line-height: 2.8rem;
+  padding: 2rem 0 1rem 0rem;
+}
+.success-msg p {
+  padding-bottom: 4rem;
+}
+.success-msg a {
+  position: relative;
+  top: 8rem;
+  text-align: center;
+  background-color: var(--clr-dark-slate-grey);
+  padding: 1rem;
+  border-radius: 0.4rem;
+  color: var(--clr-white);
+  text-decoration: none;
+  align-self: flex-end;
+}
+
+.success-msg a:hover {
+  background-color: var(--clr-tomato);
+}
+
+.hide-container {
+  display: none;
+}
+@media (min-width: 990px) {
+  body {
+    background-color: var(--clr-charcoal-grey);
+
+    min-height: 100vh;
+  }
+
+  .form-container {
+    flex-direction: row-reverse;
+    border-radius: 2rem;
+    padding: 1.2rem;
+    max-width: 100%;
+  }
+  .form-title {
+    font-size: 4rem;
+  }
+
+  .form-content {
+    display: grid;
+    padding: 3rem;
+    gap: 1.1rem;
+  }
+  .success-msg {
+    max-width: 25rem;
+    background-color: var(--clr-white);
+    min-height: 0;
+    border-radius: 2rem;
+    padding: 2.5rem;
+  }
+  .success-msg p {
+    padding-bottom: 2rem;
+  }
+  .success-msg a {
+    top: 0;
+    padding: 0.6rem;
+    margin-top: 0rem;
+  }
+}
